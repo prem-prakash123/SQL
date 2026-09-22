@@ -56,21 +56,6 @@ The project follows a **Bronze → Silver → Gold** architecture to transform r
 - Data Modeling
 
 ---
-
-## 🏗️ Data Warehouse Architecture
-
-```text
-Source Data
-     ↓
-Bronze Layer
-     ↓
-Silver Layer
-     ↓
-Gold Layer
-     ↓
-Analytics & Reporting
-
-
 📁 Project Structure
 data-warehouse-project/
 │
@@ -90,3 +75,17 @@ data-warehouse-project/
 ├── LICENSE                             # License information for the repository
 ├── .gitignore                          # Files and directories to be ignored by Git
 └── requirements.txt                    # Dependencies and requirements for the project
+
+
+## 🏗️ Data Warehouse Architecture
+
+```text
+Source Data
+     ↓
+Bronze Layer
+     ↓
+Silver Layer
+     ↓
+Gold Layer
+     ↓
+Analytics & Reporting
