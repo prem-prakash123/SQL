@@ -70,6 +70,7 @@ Gold Layer
      ↓
 Analytics & Reporting
 
+
 📁 Project Structure
 data-warehouse-project/
 │
