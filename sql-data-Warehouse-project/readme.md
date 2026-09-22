@@ -41,6 +41,7 @@ The project follows a **Bronze → Silver → Gold** architecture to transform r
 - Git
 - GitHub
 - Power BI Desktop *(optional)*
+- Draw.io
 
 ### SQL Knowledge
 
