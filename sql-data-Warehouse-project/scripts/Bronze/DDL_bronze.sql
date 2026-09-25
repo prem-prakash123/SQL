@@ -1,3 +1,22 @@
+## Bronze Layer – Table Creation
+
+This SQL script creates the Bronze Layer tables for storing raw CRM and ERP data.
+
+**CRM Tables:**
+
+* `bronze.crm_customer_info`
+* `bronze.crm_products_info`
+* `bronze.crm_sales_details`
+
+**ERP Tables:**
+
+* `bronze.erp_cust_az12`
+* `bronze.erp_LOC_A101`
+* `bronze.erp_PX_CAT_G1V2`
+
+The script drops existing tables and recreates them with the required columns and data types.
+
+
 if OBJECT_ID ('bronze.crm_customer_info', 'U') is not null
    drop table bronze.crm_customer_info;
 Create Table bronze.crm_customer_info(
