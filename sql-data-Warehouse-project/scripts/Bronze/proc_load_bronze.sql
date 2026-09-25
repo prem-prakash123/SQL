@@ -1,3 +1,8 @@
+## Bronze Layer – Data Loading Procedure
+
+This stored procedure loads raw CRM and ERP CSV data into the **Bronze Layer**. It truncates existing data and uses `BULK INSERT` to reload the source files into the respective Bronze tables.
+
+	
 Create or alter procedure bronze.load_bronze as
 begin
 
