@@ -16,7 +16,8 @@ This stored procedure transforms and cleans raw data from the **Bronze Layer** a
 
 ### Purpose
 
-The procedure uses **TRUNCATE, INSERT, CASE, TRIM, ISNULL, LEAD, ROW_NUMBER, and data validation techniques** to create clean, standardized, and analysis-ready data for the next layer of the data warehouse.
+The procedure uses **TRUNCATE, INSERT, CASE, TRIM, ISNULL, LEAD, ROW_NUMBER, and data validation techniques** to create clean, standardized, 
+	and analysis-ready data for the next layer of the data warehouse.
 
 
 create or alter procedure silver.load_silver as
