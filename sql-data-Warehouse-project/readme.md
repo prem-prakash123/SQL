@@ -124,6 +124,8 @@ Data-Warehousing-Analytics-Project/
 * Business-ready data model for analytics
 
 ## 📊 Gold Layer Data Model
+<img width="1288" height="490" alt="data_model" src="https://github.com/user-attachments/assets/ad9c437b-a051-4c94-b44a-5999eaecf462" />
+
 
 The Gold Layer follows a simple **Star Schema** approach.
 
