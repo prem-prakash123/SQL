@@ -1,92 +1,206 @@
 # Data Warehousing & Analytics Project
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project demonstrates an end-to-end **Data Warehousing and Analytics solution using SQL Server**.
+This project demonstrates the development of a **Data Warehouse and Analytics solution using SQL Server**. The project follows a **Medallion Architecture** with Bronze, Silver, and Gold layers to transform raw data into business-ready information for analysis and reporting.
 
-The project follows a **Bronze → Silver → Gold** architecture to transform raw data into clean, structured, and business-ready data for analytics.
+## 🎯 Project Objectives
 
----
+* Build a structured data warehouse using SQL Server.
+* Load and transform data from multiple source systems.
+* Clean and standardize raw data.
+* Create business-ready dimension and fact views.
+* Develop a foundation for analytics and reporting.
+* Practice SQL, data cleaning, transformation, and data modeling concepts.
 
-## 🎯 Objectives
+## 🏗️ Data Architecture
 
-- Build a SQL Server Data Warehouse
-- Load data from source files
-- Clean and transform raw data
-- Apply data quality checks
-- Create Fact and Dimension tables
-- Build a Star Schema
-- Perform SQL-based analysis
-- Generate business-ready insights
+<img width="877" height="531" alt="data_architecture" src="https://github.com/user-attachments/assets/dc2242e5-0689-44df-95da-eea758e3c5e0" />
 
----
+
+The project uses three main layers:
+```text
+Source Systems
+     │
+     ▼
+┌─────────────┐
+│ Bronze Layer│
+│ Raw Data    │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ Silver Layer│
+│ Cleaned Data│
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  Gold Layer │
+│ Business    │
+│ Ready Data  │
+└──────┬──────┘
+       │
+       ▼
+ Analytics & Reporting
+```
+
+### 🥉 Bronze Layer
+
+The Bronze Layer stores data in its raw form with minimal transformation.
+
+**Main activities:**
+
+* Load data from source CSV files.
+* Store raw CRM and ERP data.
+* Maintain the original source structure.
+
+### 🥈 Silver Layer
+
+The Silver Layer contains cleaned and standardized data.
+
+**Main activities:**
+
+* Data cleaning
+* Data validation
+* Standardization
+* Handling missing and inconsistent values
+* Data transformation
+
+### 🥇 Gold Layer
+
+The Gold Layer contains business-ready data designed for analytics.
+
+**Dimension Views:**
+
+* `gold.dim_customers`
+* `gold.dim_products`
+
+**Fact View:**
+
+* `gold.fact_sales_details`
 
 ## 🛠️ Technologies Used
 
-- **SQL Server**
-- **T-SQL**
-- **SQL Server Management Studio (SSMS)**
-- **Excel / CSV**
-- **Power BI**
-- **Git & GitHub**
+* **SQL Server**
+* **T-SQL**
+* **SQL Server Management Studio (SSMS)**
+* **Git & GitHub**
+* **CSV Files**
 
----
-
-## 📋 Requirements
-
-### Software
-
-- SQL Server
-- SQL Server Management Studio (SSMS)
-- Git
-- GitHub
-- Power BI Desktop *(optional)*
-- Draw.io
-
-### SQL Knowledge
-
-- SELECT, WHERE, GROUP BY, HAVING
-- Joins
-- Aggregate Functions
-- CTEs
-- Window Functions
-- Views
-- Stored Procedures
-- DDL & DML
-- Data Cleaning
-- Data Modeling
-
----
-
-## 🏗️ Data Warehouse Architecture
+## 📂 Project Structure
 
 ```text
-Source Data
-     ↓
-Bronze Layer
-     ↓
-Silver Layer
-     ↓
-Gold Layer
-     ↓
-Analytics & Reporting
+Data-Warehousing-Analytics-Project/
+│
+├── datasets/
+│   └── source data
+│
+├── scripts/
+│   ├── bronze/
+│   │   └── Bronze Layer SQL scripts
+│   │
+│   ├── silver/
+│   │   └── Silver Layer SQL scripts
+│   │
+│   └── gold/
+│       └── Gold Layer SQL scripts
+│
+├── docs/
+│   └── Project documentation
+│
+└── README.md
+```
 
-📁 Project Structure
-data-warehouse-project/
-│
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
-│
-├── docs/                               # Project documentation and architecture details
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
-│
-├── tests/                              # Test scripts and quality files
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+## ⭐ Key Features
+
+* Three-layer data warehouse architecture
+* SQL-based ETL/ELT transformations
+* Data cleaning and standardization
+* Customer and product dimensions
+* Sales fact table/view
+* Surrogate keys using `ROW_NUMBER()`
+* Integration of CRM and ERP data
+* Business-ready data model for analytics
+
+## 📊 Gold Layer Data Model
+
+The Gold Layer follows a simple **Star Schema** approach.
+
+```text
+             ┌──────────────────┐
+             │  dim_customers   │
+             │──────────────────│
+             │ customer_key     │
+             │ customer_id      │
+             │ customer_number  │
+             │ first_name       │
+             │ last_name        │
+             │ gender           │
+             │ birthdate        │
+             └────────┬─────────┘
+                      │
+                      │
+                      ▼
+             ┌──────────────────┐
+             │ fact_sales       │
+             │──────────────────│
+             │ order_number     │
+             │ product_key      │
+             │ customer_key     │
+             │ order_date       │
+             │ shipping_date    │
+             │ sales            │
+             │ quantity         │
+             │ price            │
+             └────────┬─────────┘
+                      │
+                      │
+                      ▼
+             ┌──────────────────┐
+             │  dim_products    │
+             │──────────────────│
+             │ product_key      │
+             │ product_id       │
+             │ product_number   │
+             │ product_name     │
+             │ category         │
+             │ subcategory      │
+             │ product_cost     │
+             └──────────────────┘
+```
+
+## 🚀 Project Workflow
+
+1. Collect source data from CRM and ERP systems.
+2. Load raw data into the Bronze Layer.
+3. Clean and transform data in the Silver Layer.
+4. Integrate related CRM and ERP datasets.
+5. Create business-ready dimensions and facts in the Gold Layer.
+6. Use the Gold Layer for analytics and reporting.
+
+## 📚 Skills Demonstrated
+
+* SQL Server
+* T-SQL
+* Data Warehousing
+* ETL / ELT
+* Data Cleaning
+* Data Transformation
+* Joins
+* CTEs
+* Window Functions
+* Views
+* Data Modeling
+* Star Schema
+* Git & GitHub
+
+## 👨‍💻 Author
+
+**Prem Prakash**
+
+Aspiring Data Analyst | SQL | Power BI | Excel | Python
+
+---
+
+⭐ This project was created for learning and demonstrating practical **Data Warehousing and Analytics** skills.
