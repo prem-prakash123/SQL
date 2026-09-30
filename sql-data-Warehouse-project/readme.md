@@ -15,7 +15,8 @@ This project demonstrates the development of a **Data Warehouse and Analytics so
 
 ## 🏗️ Data Architecture
 
-data_architecture
+<img width="877" height="531" alt="data_architecture" src="https://github.com/user-attachments/assets/d84344cd-ab69-4144-ae32-7cd2afcc7699" />
+
 
 The project uses three main layers:
 
@@ -125,7 +126,10 @@ Data-Warehousing-Analytics-Project/
 
 ## 📊 Gold Layer Data Model
 
-data_model
+Data model
+
+<img width="1288" height="490" alt="data_model" src="https://github.com/user-attachments/assets/3b84c5d0-1ab8-4dfd-b0cf-b66d6cb79269" />
+
 
 The Gold Layer follows a simple **Star Schema** approach.
 
